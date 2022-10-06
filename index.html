@@ -4,9 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <div class="row navbar navbar-dark bg-dark">
+            <div class="col-12 text-center">
+                <h1 class="navbar-brand pb-0 px-0">Weather Dashboard</h1>
+            </div>
+        </div>
+        <div class="row content-row">
+            <div class="col-12 col-md-3 bg-light p-3">
+                <h5>Search for a city:</h5>
+                <form>
+                    <div class="form-group input-group">
+                        <input type="text" id="search-city" class="form-control" placeholder="Enter City Here">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="search-city-button">
+                                <i>Search</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="card">
+                    <ul class="list-group list-group-flush" id="search-history-list">
+
+                    </ul>
+                    <button id="clear-history" class="btn btn-primary">Clear History</button>
+                </div>
+            </div>
+            <div id="weather-content" class="col-12 col-md-9 hide">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="city-info border my-3 px-3 py-3">
+                            <h2 id="current-city">City Information <small class="text-muted" id="current-date"></small></h2>
+                            <p>Temperature: <span id="current-temp"></span></p>
+                            <p>Humidity: <span id="current-humidity"></span></p>
+                            <p>Wind Speed: <span id="current-wind-speed"></span></p>
+                            <p>UV index: <span id="uv-index"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3>5-day Forecast</h3>
+                    </div>
+                </div>
+                <div id="five-day-forecast" class="row">
+                    <div class="col-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <i class="fa fa-sun"></i>
+                                <p class="card-text">Temp: </p>
+                                <p class="card-text">Humidity: </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script.js"
 </body>
 </html>
